@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "476594413525",
+    "project_id": "gunungindonesia-74f51",
+    "storage_bucket": "gunungindonesia-74f51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476594413525:android:48c85b3d2b7ae27df3275c",
+        "android_client_info": {
+          "package_name": "com.kerjapraktek.gunungindonesia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476594413525-5ec43dum3l0dvasor4ilkouheph1qimm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBSOCgWl3MqTMduIKLg1ZWOBX5KQDHApg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476594413525-5ec43dum3l0dvasor4ilkouheph1qimm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
