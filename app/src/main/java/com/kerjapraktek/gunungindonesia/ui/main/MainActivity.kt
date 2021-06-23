@@ -1,13 +1,19 @@
 package com.kerjapraktek.gunungindonesia.ui.main
 
+import android.content.Intent
 import android.content.res.TypedArray
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kerjapraktek.gunungindonesia.R
 import com.kerjapraktek.gunungindonesia.databinding.ActivityMainBinding
 import com.kerjapraktek.gunungindonesia.model.Menu
+import com.kerjapraktek.gunungindonesia.ui.jabar.JabarActivity
+import com.kerjapraktek.gunungindonesia.ui.jateng.JatengActivity
+import com.kerjapraktek.gunungindonesia.ui.jatim.JatimActivity
+import com.kerjapraktek.gunungindonesia.ui.luarjawa.LuarJawaActivity
 import com.kerjapraktek.gunungindonesia.ui.main.adapter.MenuListAdapter
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +39,35 @@ class MainActivity : AppCompatActivity() {
         menuListAdapter = MenuListAdapter(list)
         list.addAll(getListMenu())
         rvMenu.adapter = menuListAdapter
+        menuListAdapter.setOnItemClickCallback(object :MenuListAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: Menu) {
+                val intent: Intent
+                when(data.title){
+                    getString(R.string.jawa_timur)->{
+                        Toast.makeText(this@MainActivity, getString(R.string.jawa_timur), Toast.LENGTH_SHORT).show()
+                        intent= Intent(this@MainActivity, JatimActivity::class.java)
+                        startActivity(intent)
+                    }
+                    getString(R.string.jawa_barat)->{
+                        Toast.makeText(this@MainActivity, getString(R.string.jawa_barat), Toast.LENGTH_SHORT).show()
+                        intent= Intent(this@MainActivity, JabarActivity::class.java)
+                        startActivity(intent)
+                    }
+                    getString(R.string.jawa_tengah)->{
+                        Toast.makeText(this@MainActivity, getString(R.string.jawa_tengah), Toast.LENGTH_SHORT).show()
+                        intent= Intent(this@MainActivity, JatengActivity::class.java)
+                        startActivity(intent)
+                    }
+                    getString(R.string.luar_jawa)->{
+                        Toast.makeText(this@MainActivity, getString(R.string.luar_jawa), Toast.LENGTH_SHORT).show()
+                        intent= Intent(this@MainActivity, LuarJawaActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                }
+
+            }
+        })
     }
 
     private fun getListMenu(): ArrayList<Menu> {
