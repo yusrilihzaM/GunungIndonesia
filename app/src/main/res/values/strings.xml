@@ -13,7 +13,8 @@
     <string name="jawa_barat">Jawa Barat</string>
     <string name="jawa_tengah">Jawa Tengah</string>
     <string name="luar_jawa">Luar Jawa</string>
-    <string name="peralatan">PERALATAN</string>
+    <string name="peralatan">Peralatan</string>
+
     <string-array name="data_title">
         <item>@string/jawa_timur</item>
         <item>@string/jawa_tengah</item>

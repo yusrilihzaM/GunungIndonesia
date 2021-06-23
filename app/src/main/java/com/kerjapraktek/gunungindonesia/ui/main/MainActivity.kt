@@ -15,6 +15,7 @@ import com.kerjapraktek.gunungindonesia.ui.jateng.JatengActivity
 import com.kerjapraktek.gunungindonesia.ui.jatim.JatimActivity
 import com.kerjapraktek.gunungindonesia.ui.luarjawa.LuarJawaActivity
 import com.kerjapraktek.gunungindonesia.ui.main.adapter.MenuListAdapter
+import com.kerjapraktek.gunungindonesia.ui.peralatan.PeralatanActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
         showMenu()
+
+        binding.floatingActionButton.setOnClickListener {
+            Toast.makeText(this@MainActivity, getString(R.string.peralatan), Toast.LENGTH_SHORT).show()
+            intent= Intent(this@MainActivity, PeralatanActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun showMenu() {
