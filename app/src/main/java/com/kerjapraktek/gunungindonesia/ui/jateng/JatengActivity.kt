@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.text.Html
 import android.view.MenuItem
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kerjapraktek.gunungindonesia.R
 import com.kerjapraktek.gunungindonesia.adapter.GridGunungAdapter
 import com.kerjapraktek.gunungindonesia.databinding.ActivityJabarBinding
 import com.kerjapraktek.gunungindonesia.databinding.ActivityJatengBinding
+import com.kerjapraktek.gunungindonesia.databinding.ActivityJatimBinding
 import com.kerjapraktek.gunungindonesia.viewmodel.GunungViewModel
 
 class JatengActivity : AppCompatActivity() {
@@ -20,12 +23,28 @@ class JatengActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jateng)
-
+        binding = ActivityJatengBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val upArrow =resources.getDrawable(R.drawable.ic_baseline_chevron_left_24)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(upArrow)
         supportActionBar?.title = Html.fromHtml("<font color=\"black\">" + getString(R.string.jawa_tengah) + "</font>")
+
+        viewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(GunungViewModel::class.java)
+        showGunung()
+    }
+
+    private fun showGunung() {
+        viewModel.setGunung("Jawa Tengah")
+        viewModel.getGunung().observe(this,{data->
+            showLoading(false)
+            rvGunung=binding.rvGunung
+            rvGunung.setHasFixedSize(true)
+            rvGunung.layoutManager = GridLayoutManager(this,2)
+            gridGunungAdapter = GridGunungAdapter(data)
+            rvGunung.adapter = gridGunungAdapter
+        })
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
