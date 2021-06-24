@@ -1,4 +1,4 @@
-package com.kerjapraktek.gunungindonesia.ui.jatim.adapter
+package com.kerjapraktek.gunungindonesia.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,16 +8,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.kerjapraktek.gunungindonesia.R
 import com.kerjapraktek.gunungindonesia.databinding.ItemGunungBinding
-import com.kerjapraktek.gunungindonesia.databinding.ItemPeralatanBinding
 import com.kerjapraktek.gunungindonesia.model.Gunung
-import com.kerjapraktek.gunungindonesia.model.Peralatan
-import com.kerjapraktek.gunungindonesia.ui.peralatan.adapter.ListPeralatan
 
-class GridJatimAdapter(private val ListGunung: ArrayList<Gunung>): RecyclerView.Adapter<GridJatimAdapter.ListViewHolder>() {
+class GridGunungAdapter(private val ListGunung: ArrayList<Gunung>): RecyclerView.Adapter<GridGunungAdapter.ListViewHolder>() {
 
-    private var onItemClickCallback: GridJatimAdapter.OnItemClickCallback? = null
+    private var onItemClickCallback: OnItemClickCallback? = null
 
-    fun setOnItemClickCallback(onItemClickCallback: GridJatimAdapter.OnItemClickCallback) {
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 

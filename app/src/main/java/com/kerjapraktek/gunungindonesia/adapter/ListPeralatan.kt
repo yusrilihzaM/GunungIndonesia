@@ -1,4 +1,4 @@
-package com.kerjapraktek.gunungindonesia.ui.peralatan.adapter
+package com.kerjapraktek.gunungindonesia.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

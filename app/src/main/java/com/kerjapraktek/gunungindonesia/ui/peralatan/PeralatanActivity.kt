@@ -10,16 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kerjapraktek.gunungindonesia.R
 import com.kerjapraktek.gunungindonesia.databinding.ActivityPeralatanBinding
-import com.kerjapraktek.gunungindonesia.ui.main.adapter.MenuListAdapter
-import com.kerjapraktek.gunungindonesia.ui.peralatan.adapter.ListPeralatan
-import com.kerjapraktek.gunungindonesia.viewmodel.InfoViewModel
+import com.kerjapraktek.gunungindonesia.adapter.ListPeralatan
 import com.kerjapraktek.gunungindonesia.viewmodel.PeralatanViewModel
 
 class PeralatanActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPeralatanBinding
     private lateinit var rvPeralatan: RecyclerView
-    private lateinit var listPeralatan:ListPeralatan
+    private lateinit var listPeralatan: ListPeralatan
     private lateinit var viewModel: PeralatanViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
