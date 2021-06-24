@@ -1,10 +1,12 @@
 package com.kerjapraktek.gunungindonesia.ui.jateng
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +15,8 @@ import com.kerjapraktek.gunungindonesia.adapter.GridGunungAdapter
 import com.kerjapraktek.gunungindonesia.databinding.ActivityJabarBinding
 import com.kerjapraktek.gunungindonesia.databinding.ActivityJatengBinding
 import com.kerjapraktek.gunungindonesia.databinding.ActivityJatimBinding
+import com.kerjapraktek.gunungindonesia.model.Gunung
+import com.kerjapraktek.gunungindonesia.ui.detail.DetailActivity
 import com.kerjapraktek.gunungindonesia.viewmodel.GunungViewModel
 
 class JatengActivity : AppCompatActivity() {
@@ -44,6 +48,15 @@ class JatengActivity : AppCompatActivity() {
             rvGunung.layoutManager = GridLayoutManager(this,2)
             gridGunungAdapter = GridGunungAdapter(data)
             rvGunung.adapter = gridGunungAdapter
+
+            gridGunungAdapter.setOnItemClickCallback(object :GridGunungAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: Gunung) {
+                    Toast.makeText(this@JatengActivity, data.nama_gunung, Toast.LENGTH_SHORT).show()
+                    val intent= Intent(this@JatengActivity, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.EXTRA_DATA,data)
+                    startActivity(intent)
+                }
+            })
         })
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

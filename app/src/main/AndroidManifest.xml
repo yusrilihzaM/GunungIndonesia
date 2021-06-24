@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GunungIndonesia">
-        <activity android:name=".ui.peralatan.PeralatanActivity"></activity>
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/Theme.GunungIndonesia.NoActionBar"></activity>
+        <activity android:name=".ui.peralatan.PeralatanActivity" />
         <activity android:name=".ui.luarjawa.LuarJawaActivity" />
         <activity android:name=".ui.jabar.JabarActivity" />
         <activity android:name=".ui.jateng.JatengActivity" />

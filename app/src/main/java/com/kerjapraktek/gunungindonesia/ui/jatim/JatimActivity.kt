@@ -1,16 +1,22 @@
 package com.kerjapraktek.gunungindonesia.ui.jatim
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kerjapraktek.gunungindonesia.R
 import com.kerjapraktek.gunungindonesia.databinding.ActivityJatimBinding
 import com.kerjapraktek.gunungindonesia.adapter.GridGunungAdapter
+import com.kerjapraktek.gunungindonesia.model.Gunung
+import com.kerjapraktek.gunungindonesia.ui.detail.DetailActivity
+import com.kerjapraktek.gunungindonesia.ui.detail.DetailActivity.Companion.EXTRA_DATA
 import com.kerjapraktek.gunungindonesia.viewmodel.GunungViewModel
 
 class JatimActivity : AppCompatActivity() {
@@ -41,7 +47,16 @@ class JatimActivity : AppCompatActivity() {
             rvGunung.setHasFixedSize(true)
             rvGunung.layoutManager = GridLayoutManager(this,2)
             gridGunungAdapter = GridGunungAdapter(data)
+
             rvGunung.adapter = gridGunungAdapter
+            gridGunungAdapter.setOnItemClickCallback(object :GridGunungAdapter.OnItemClickCallback{
+                override fun onItemClicked(data: Gunung) {
+                    Toast.makeText(this@JatimActivity, data.nama_gunung, Toast.LENGTH_SHORT).show()
+                    val intent= Intent(this@JatimActivity, DetailActivity::class.java)
+                    intent.putExtra(EXTRA_DATA,data)
+                    startActivity(intent)
+                }
+            })
         })
     }
 

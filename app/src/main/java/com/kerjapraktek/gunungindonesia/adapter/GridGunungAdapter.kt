@@ -34,6 +34,10 @@ class GridGunungAdapter(private val ListGunung: ArrayList<Gunung>): RecyclerView
                 }
                 title.text=gunung.nama_gunung
                 jenis.text=gunung.lokasi_gunung
+
+                itemView.setOnClickListener{
+                    onItemClickCallback?.onItemClicked(gunung)
+                }
             }
         }
     }
