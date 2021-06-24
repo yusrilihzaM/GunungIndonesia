@@ -3,7 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#E4E4E4"
+    android:padding="@dimen/size_16"
     android:layout_height="match_parent"
-    tools:context=".ui.jateng.JatengActivity">
+    tools:context=".ui.jatim.JatimActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gunung"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_gunung"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

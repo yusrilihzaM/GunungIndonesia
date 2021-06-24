@@ -4,11 +4,12 @@ import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kerjapraktek.gunungindonesia.model.Gunung
 import com.kerjapraktek.gunungindonesia.model.Peralatan
 
-class GunungViewModel {
+class GunungViewModel:ViewModel() {
     val listGunung = MutableLiveData<ArrayList<Gunung>>()
     fun setGunung(lokasi:String){
         val listItems = ArrayList<Gunung>()
@@ -49,7 +50,7 @@ class GunungViewModel {
                 }
             }
     }
-    fun getPeralatan(): LiveData<ArrayList<Gunung>> {
+    fun getGunung(): LiveData<ArrayList<Gunung>> {
         return listGunung
     }
 }

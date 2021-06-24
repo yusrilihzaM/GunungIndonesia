@@ -39,6 +39,7 @@ class PeralatanActivity : AppCompatActivity() {
     private fun showData() {
         viewModel.setPeralatan()
         viewModel.getPeralatan().observe(this,{data->
+            showLoading(false)
             rvPeralatan=binding.rvPeralatan
             rvPeralatan.setHasFixedSize(true)
             rvPeralatan.layoutManager = LinearLayoutManager(this)
@@ -54,6 +55,13 @@ class PeralatanActivity : AppCompatActivity() {
                 true
             }
             else -> true
+        }
+    }
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 }
