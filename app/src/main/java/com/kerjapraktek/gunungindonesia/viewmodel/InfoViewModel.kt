@@ -10,7 +10,6 @@ import com.kerjapraktek.gunungindonesia.model.App
 
 class InfoViewModel:ViewModel() {
     val listInfoDetail = MutableLiveData<ArrayList<App>>()
-
     fun setInfoDetail(){
         val listItems = ArrayList<App>()
         val db = FirebaseFirestore.getInstance()
