@@ -17,7 +17,7 @@ class GridGunungAdapter(private val ListGunung: ArrayList<Gunung>): RecyclerView
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
-
+    //nampilkan data
     inner class ListViewHolder(private val binding: ItemGunungBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(gunung: Gunung){
             val circularProgressDrawable = CircularProgressDrawable(itemView.context)
@@ -25,6 +25,7 @@ class GridGunungAdapter(private val ListGunung: ArrayList<Gunung>): RecyclerView
             circularProgressDrawable.centerRadius = 30f
             circularProgressDrawable.start()
             with(binding){
+                //start foto gunung
                 photo?.let {
                     Glide.with(itemView.context)
                         .load(gunung.gambar_gunung)
@@ -32,12 +33,14 @@ class GridGunungAdapter(private val ListGunung: ArrayList<Gunung>): RecyclerView
                             .error(R.drawable.ic_error)).override(155,155)
                         .into(it)
                 }
-                title.text=gunung.nama_gunung
-                jenis.text=gunung.lokasi_gunung
-
+                //end foto gunung
+                title.text=gunung.nama_gunung// nama gunung
+                jenis.text=gunung.lokasi_gunung//lokasi
+                //start klik
                 itemView.setOnClickListener{
                     onItemClickCallback?.onItemClicked(gunung)
                 }
+                //end klik
             }
         }
     }

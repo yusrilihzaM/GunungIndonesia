@@ -12,5 +12,6 @@ data class Gunung(
     var jalur_pendakian :String,
     var informasi_gunung :String,
     var estimasi_pendakian :String,
-    var lokasi_gunung :String
+    var lokasi_gunung :String,
+    var harga_tiket :String
 ):Parcelable

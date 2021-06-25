@@ -31,10 +31,13 @@ class SplashScreenActivity : AppCompatActivity() {
 
         viewModel.setInfoDetail()
         viewModel.getAppInfo().observe(this,{data->
+            //menampilkan logo
             Glide.with(this)
                 .load(data[0].gambarAplikasi)
                 .into(binding.icLogo)
+            //durasi splash screen
             Handler(Looper.getMainLooper()).postDelayed({ moveActivity() },TIME)
+            //menampilkan judul app
             binding.tvTitleSplash.text=data[0].namaAplikasi.toString()
         })
     }

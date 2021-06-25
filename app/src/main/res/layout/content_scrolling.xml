@@ -63,6 +63,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Harga Tiket Perhari"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="@dimen/size_8"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/harga_tiket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp."
+            android:layout_marginTop="@dimen/size_8"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/informasi_gunung"
             android:textStyle="bold"
             android:textSize="16sp"
