@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Peralatan(
-    var id :String,
+    var id :Int,
     var nama_peralatan :String,
     var gambar_peralatan :String,
     var jenis_peralatan :String,

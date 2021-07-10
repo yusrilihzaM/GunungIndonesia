@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Gunung(
-    var id :String,
+    var id :Int,
     var nama_gunung :String,
     var deskripsi_gunung :String,
     var gambar_gunung :String,
