@@ -30,7 +30,7 @@ class GunungViewModel:ViewModel() {
                 if (task.isSuccessful) {
                     for (document in task.result!!) {
                         //tarik data
-                        val id=document["id"].toString()
+                        val id= document["id"].toString()
                         val nama_gunung=document["nama_gunung"].toString()
                         val deskripsi_gunung=document["deskripsi_gunung"].toString()
                         val gambar_gunung=document["gambar_gunung"].toString()
@@ -40,7 +40,7 @@ class GunungViewModel:ViewModel() {
                         val lokasi_gunung=document["lokasi_gunung"].toString()
                         val harga_tiket=document["harga_tiket"].toString()
                         val app= Gunung(
-                            id,
+                            id.toInt(),
                             nama_gunung,
                             deskripsi_gunung,
                             gambar_gunung,

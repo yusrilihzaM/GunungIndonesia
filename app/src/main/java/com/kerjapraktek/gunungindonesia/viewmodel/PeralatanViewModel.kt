@@ -27,7 +27,7 @@ class PeralatanViewModel:ViewModel() {
                         val gambar_peralatan=document["gambar_peralatan"].toString()
                         val jenis_peralatan=document["jenis_peralatan"].toString()
                         val app= Peralatan(
-                            id,
+                            id.toInt(),
                             nama_peralatan,
                             gambar_peralatan,
                             jenis_peralatan
